@@ -16,7 +16,6 @@
     s.parentNode.insertBefore(hm, s);
   })();
 </script>
-
 <script>
 	(function(){
 		var canonicalURL, curProtocol;
@@ -208,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            <?php echo home ?>
+            <?php echo $home ?>
           </a>
         </li>
       
@@ -218,7 +217,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            <?php echo $tages ?>
           </a>
         </li>
       
@@ -228,7 +227,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            <?php echo $archives ?>
           </a>
         </li>
       
@@ -238,7 +237,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+             <?php echo $friends ?>
           </a>
         </li>
       
@@ -248,7 +247,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-users"></i> <br>
             
-            <?php echo line ?>
+            <?php echo $line ?>
           </a>
         </li>
       
