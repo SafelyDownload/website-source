@@ -238,11 +238,26 @@
 <?php 
 $article_link = '"http://mryan05.coding.me/2019/08/16/richanganpai.html"'
 $Software_name = 'a'
+$datetime = ''
+if (isset($_COOKIE["language"])){
+  function openWin(){
+    myWindow=window.open('','','width=200,height=100');
+    myWindow.document.write('<form action="./index.php" method="get">
+    语言: （如：chinese）
+    <input type="text" name="language">
+    <input type="submit">
+    </form>');
+    myWindow.focus();
+  }
+  setcookie("language", $_POST["language"]);
+} else {
+  include $_COOKIE["language"]).".php"
+}
 echo '
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 
   <div class="post-block" style="opacity: 1; display: block;">
-    <link itemprop="mainEntityOfPage" href=$article_link>
+    <link itemprop="mainEntityOfPage" href='.$article_link.'>
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="description" content="">
@@ -270,10 +285,10 @@ echo '
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">'.$datePublished.'</span>
               
-              <time title="$dateCreated" itemprop="dateCreated datePublished" datetime="$datetime">
-                $datetime
+              <time title="$dateCreated" itemprop="dateCreated datePublished" datetime="'.$datetime.'">
+                '.$datetime.'
               </time>
             
 
@@ -290,7 +305,7 @@ echo '
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">'.$dateClassified.'</span>
               
               
                 <span itemprop="about" itemscopa13788045733="" e="" itemtype="http://schema.org/Thing">
@@ -372,7 +387,7 @@ echo '
   
   
   
-  </article>'?>
+  </article> '?>
 
 
 
