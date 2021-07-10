@@ -1,4 +1,16 @@
-<?php include "setting.php" ?>
+<?php 
+include "setting.php" 
+if (isset($_COOKIE["language"])){
+  <form action="./index.php" method="post">
+	<p>语言: （如：chinese）</p>
+	<input type="text" name="language">
+	<input type="submit">
+   </form>'
+  setcookie("language", $_POST["language"]);
+} else {
+  include $_COOKIE["language"]).".php"
+}
+?>
 <html class="theme-next mist use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0">
   <meta name="shenma-site-verification" content="7bb3c340436cd21107cf58d10b31e859_1573224253"> 
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -239,16 +251,6 @@
 $article_link = '"http://mryan05.coding.me/2019/08/16/richanganpai.html"'
 $Software_name = 'a'
 $datetime = ''
-if (isset($_COOKIE["language"])){
-  function openWin(){
-    myWindow=window.open('','','width=200,height=100');
-    myWindow.document.write('<form action="./index.php" method="post"><p>语言: （如：chinese）</p><input type="text" name="language"><input type="submit"></form>');
-    myWindow.focus();
-  }
-  setcookie("language", $_POST["language"]);
-} else {
-  include $_COOKIE["language"]).".php"
-}
 echo '
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 
