@@ -242,11 +242,7 @@ $datetime = ''
 if (isset($_COOKIE["language"])){
   function openWin(){
     myWindow=window.open('','','width=200,height=100');
-    myWindow.document.write('<form action="./index.php" method="get">
-    语言: （如：chinese）
-    <input type="text" name="language">
-    <input type="submit">
-    </form>');
+    myWindow.document.write('<form action="./index.php" method="post"><p>语言: （如：chinese）</p><input type="text" name="language"><input type="submit"></form>');
     myWindow.focus();
   }
   setcookie("language", $_POST["language"]);
