@@ -34,8 +34,8 @@ jobs:
           # FTP password
           password: A1378804
           # Force SSL encryption
-          forceSsl: # optional, default is false
+          forceSsl:  false
           # Local directory
-          localDir: # optional, default is .
+          localDir: ./
           # Remote directory
-          remoteDir: # optional, default is .
+          remoteDir: ./
